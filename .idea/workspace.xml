@@ -85,10 +85,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="formelo.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="formelo.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/build/js/app/formelo.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="188">
+                <state relative-caret-position="956">
                   <caret line="1106" column="0" selection-start-line="1106" selection-start-column="0" selection-end-line="1106" selection-end-column="0" />
                   <folding>
                     <element signature="n#!!doc;n#Formelo#0" expanded="false" />
@@ -195,6 +195,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/composer.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="192">
+                  <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/build/index.html">
               <provider selected="true" editor-type-id="text-editor">
@@ -203,16 +213,6 @@
                   <folding>
                     <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="PublishCommand.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/commands/PublishCommand.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -393,7 +393,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../Public Formelo IOS/www/js/app/sync.js" />
         <option value="$PROJECT_DIR$/commands/Publish.php" />
         <option value="$PROJECT_DIR$/commands/PublishCommand.php" />
         <option value="$PROJECT_DIR$/commands/UnpublishCommand.php" />
@@ -444,6 +443,7 @@
         <option value="$PROJECT_DIR$/app/pages/pages.json" />
         <option value="$PROJECT_DIR$/build/index.html" />
         <option value="$PROJECT_DIR$/build/js/app/formelo.js" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -497,6 +497,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="formelo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="formelo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="formelo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -616,12 +626,12 @@
       <workItem from="1477007000435" duration="67000" />
       <workItem from="1477042067156" duration="6937000" />
       <workItem from="1477300912485" duration="881000" />
-      <workItem from="1477985616892" duration="114000" />
+      <workItem from="1477985616892" duration="296000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212207000" />
+    <option name="totallyTimeSpent" value="212389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -666,7 +676,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/pages/basic-store-settings/basic-store-settings.html" />
     <entry file="file://$PROJECT_DIR$/app/pages/deals/deals.html" />
     <entry file="file://$PROJECT_DIR$/app/pages/orders/orders.html" />
     <entry file="file://$PROJECT_DIR$/app/pages/social-media-settings/social-media-settings.html" />
@@ -938,7 +947,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/js/app/formelo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="956">
           <caret line="1106" column="0" selection-start-line="1106" selection-start-column="0" selection-end-line="1106" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc;n#Formelo#0" expanded="false" />
@@ -1041,6 +1050,14 @@
             <marker date="1477985712000" expanded="true" signature="28379:28385" ph=" " />
             <marker date="1477985712000" expanded="true" signature="28385:28391" ph=" " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
