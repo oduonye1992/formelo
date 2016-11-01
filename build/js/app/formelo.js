@@ -26,7 +26,7 @@ function Formelo(appletID, backlink, config){
         var that = this;
         if (that.mAppletConfig !== null){
             console.log('Getting conf from params passed');
-            console.log(JSON.stringify(that.mAppletConfig));
+            //console.log(JSON.stringify(that.mAppletConfig));
             that.rootPage = that.mAppletConfig.root.trim();
             callback(that.mAppletConfig);
         } else {
@@ -44,6 +44,10 @@ function Formelo(appletID, backlink, config){
     };
 }
 
+Formelo.prototype.getMode = function(){
+    return APPLET_MODE;
+};
+
 Formelo.prototype.constants = {
     events : {
         ON_CREATE   : 'onCreate',
@@ -60,17 +64,29 @@ Formelo.prototype.constants = {
     }
 };
 
+Formelo.prototype.buildPages = function(){
+    var obj = {};
+    if (this.mAppletConfig && this.mAppletConfig.pages &&
+        this.mAppletConfig.pages.length){
+        this.mAppletConfig.pages.forEach(function(item){
+            obj[item.key] = item;
+        });
+    }
+    this.mAppletConfig.pages = obj;
+    console.log('Pages is now '+JSON.stringify(this.mAppletConfig.pages));
+};
+
 Formelo.prototype.close = function(){
     // TODO Burn everything
     //createDashboardPage('data_lists');
+    $('.applet-dependencies').remove();
+    $('.applet-loaded-stylesheets').remove();
+    $('.applet-holder').remove();
+    $('.applet-pages').remove();
     showMessage('Goodbye...');
     bodyContainer.pagecontainer('change', '#'+this.backlink, {
         transition: "none"
     });
-};
-
-Formelo.prototype.getMode = function(){
-    return APPLET_MODE;
 };
 
 Formelo.prototype.html = function() {
@@ -143,17 +159,6 @@ Formelo.prototype.html = function() {
     }
 };
 
-Formelo.prototype.buildPages = function(){
-    var obj = {};
-    if (this.mAppletConfig && this.mAppletConfig.pages &&
-        this.mAppletConfig.pages.length){
-        this.mAppletConfig.pages.forEach(function(item){
-            obj[item.key] = item;
-        });
-    }
-    this.mAppletConfig.pages = obj;
-};
-
 Formelo.prototype.start = function(){
     /** Create Placeholder to hold out event throwing and catching */
     var id = str_random(10);
@@ -166,7 +171,8 @@ Formelo.prototype.start = function(){
     /** Get the form config, */
     var that = this;
     this.getAppletConfig(this.mAppletID, function(){
-            // Pages were objects before but was reverted to array. Don't wanna change much to i'll turn it to objects
+        // Create the first page
+        try {
             that.buildPages();
             if (that.mAppletConfig && that.mAppletConfig.pages){
                 console.log(that.mAppletConfig);
@@ -188,6 +194,9 @@ Formelo.prototype.start = function(){
             } else {
                 alert('Invalid config '+JSON.stringify(that.mAppletConfig));
             }
+        } catch (e) {
+            console.error('[Formelo Start] '+e.message+' | Stack '+JSON.stringify(e));
+        }
     });
 };
 
@@ -239,10 +248,10 @@ Formelo.prototype.runDependencies = function(){
 
 Formelo.prototype.runProvider = function(){
     if(!this.mAppletConfig.exports || !this.mAppletConfig.exports.js){
-        return 'No Provide array';
+        return console.log('No Providers');
     }
     var exports = this.mAppletConfig.exports.js;
-    console.log(exports);
+    //console.log(exports);
     for (var key in exports) {
         if (exports[key]) {
             if (!this.mModules[key]){
@@ -417,13 +426,13 @@ Formelo.prototype.ui = function(){
             };
             var showMultipleActions = function(that, items, callback){
                 var id = that.mAppletID+'-'+that.currentIndex;
-                $('#'+id).find('#applet-header-nav-btn-right').html('More').click(function(){
+                $('#'+id).find('#applet-header-nav-btn-right').html('<i class="fa fa-ellipsis-h"></i>').click(function(){
                     var actionPlaceholder = id+'-actionbar';
                     var placeholder = '<div id="'+id+'-actionbar"></div>';
                     var mod = that.ui().modal('Options', placeholder);
                     that.ui().optionsAdapter(items, '#'+actionPlaceholder).attach(function(unique){
                         mod.close();
-                        callback('unique');
+                        callback(unique);
                     });
                 });
             };
@@ -497,10 +506,10 @@ Formelo.prototype.ui = function(){
                 var newDefault = $.extend({}, defaults, item);
                 html += '<div unique="'+item.unique+'" class="row holder-clickable-item" style="height: 20vh;background-color: '+newDefault.colour+';">'+
                     '<div class="col-xs-2" style="">'+
-                    '<p style="margin-top: 40%; color: white;font-weight: 400; text-align: center;">'+i+'</p>'+
+                    //'<p style="margin-top:40%; color: white;font-weight: 400; text-align: center;">'+i+'</p>'+
                     '</div>'+
                     '<div class="col-xs-10">'+
-                    '<p style="font-size: xx-large ;font-weight: 400;color: white;text-align: center;line-height: 20vh;margin-left: -20%;">'+newDefault.text+'</p>'+
+                    '<p style="font-size: x-large ;font-weight: 400;color: white;text-align: center;line-height: 20vh;margin-left: -20%;">'+newDefault.text+'</p>'+
                     '</div>'+
                     '</div>';
                 i++;
@@ -592,13 +601,13 @@ Formelo.prototype.ui = function(){
                 var defaultItem = $.extend({}, defaults, item);
                 html += '<div class="col-xs-6 col-sm-3 col-md-3 applet-list-item '+identifier+' clickable-panel" unique="'+defaultItem.unique+'" style="padding: 12px; margin-bottom: 6px;">' +
                     '<div class = "row" style="height: inherit;">' +
-                    '<div class="col-xs-12 col-sm-12 col-md-12" style = "padding: 0px;">' +
+                    '<div class="col-xs-12 col-sm-12 col-md-12" style = "padding: 0px; text-align: center;">' +
                     '<img aaa ="' + i + '" class="qmyImg qloadingImg" src="img/loading.png" style="max-width: 100%;" />' +
-                    '<img xxx ="' + i + '" class="qmyImg qmainImg" src="' + defaultItem.image + '" style="max-width: 100%;" />' +
+                    '<img xxx ="' + i + '" class="qmyImg qmainImg" src="' + defaultItem.image + '" style="max-height: 250px; max-width: 100%;" />' +
                     '</div>' +
                     '<div class="col-xs-12 col-sm-12 col-md-12" style = " height:64px; max-height:64px; background-color:white;">' +
-                    '<span style="font-size: x-small; color: #2c3e50; font-weight:400">' + defaultItem.name + '</span>' +
-                    '<p style="font-size: xx-small; color: grey; margin-top: 2px; word-wrap: break-word; line-height: 14px;">' + defaultItem.description + '</p>' +
+                    '<span style="font-size: small; color: #2c3e50; font-weight:400">' + defaultItem.name + '</span>' +
+                    '<p style="font-size: x-small; color: grey; margin-top: 2px; word-wrap: break-word; line-height: 14px;">' + defaultItem.description + '</p>' +
                     '</div>' +
                     '</div>' +
                     '</div>';
@@ -1048,7 +1057,7 @@ Formelo.prototype.require = function(key){
             eval(exports[key].data);
             console.log(key + ' has been "evaled"');
             console.log(JSON.stringify(this.mModules));//
-            console.log("Done loading");
+            console.log("Done loading ");
             return this.mModules[key];
         } else {
             throw new Error('Item could not be found.. '+key);
@@ -1093,10 +1102,6 @@ Formelo.prototype.dependencies =  function(){
         }
     }
 };
-
-
-
-
 
 
 
