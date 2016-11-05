@@ -2,8 +2,7 @@
  * Welcome to Formelo ladies
  * @class
  * @constructor
- * @author Gov Ayo Fayose
- * @copyright Edo witches convention manual
+ * @author Daniel Oduonye
  * @param {string} appletID - Your generated applet ID. Kindy get it at https://<name>.formelo.com/applets/<id>/edit/meta
  * @todo handle close callback not triggering after returning back to page
  *
@@ -92,6 +91,14 @@ Formelo.prototype.close = function(){
 Formelo.prototype.html = function() {
     var that = this;
     return {
+        getHeader : function(){
+            var id = that.mAppletID+'-'+that.currentIndex;
+            return $('#'+id).find('#applet-header-title')
+        },
+        getMenu : function(){
+            var id = that.mAppletID+'-'+that.currentIndex;
+            return $('#'+id).find('#applet-header-nav-btn-right');
+        },
         get : {
             header : {
                 title : function(){
@@ -121,6 +128,7 @@ Formelo.prototype.html = function() {
             }
         },
         header : function(options){
+
             var option = {
                 title : 'My title',
                 isMainActivity : true
@@ -130,18 +138,17 @@ Formelo.prototype.html = function() {
             var exitUrl     = '';
             var linkText    = '';
             if (defaults.isMainActivity) {
-                //exitUrl = 'onclick = "createDashboardPage(\'data_lists\')"';
                 exitUrl = 'onclick = "formelo.close(\''+that.mAppletID+'\')"';
                 linkText = 'Exit';
             } else {
-                //showBackUrl = 'data-rel="back"';
                 showBackUrl = 'onclick="return formelo.navigation().back();"';
-                linkText = 'Back';
+                linkText = '';
             }
-            var backHtml = '<a '+showBackUrl+' '+exitUrl+' class="ui-btn ui-btn-left header-link applet-header-nav-btn"><i class="pg-arrow_left_line_alt"></i> ' +linkText+ '</a>';
-            var holderHtml = '<a id="applet-header-nav-btn-right" class="ui-btn ui-btn-right header-link applet-header-nav-btn"></a>';
-            var html =  '<div id="applet-header-main" data-role="header" data-position="fixed" data-tap-toggle="false" class="blue-gradient">'+
-                '<h1 class="wow fadeIn" style="text-align:center" id="applet-header-title">'+defaults.title+'</h1>'+
+            var backHtml = '<a '+showBackUrl+' '+exitUrl+' class="ui-btn ui-btn-left header-link applet-header-nav-btn applet-header-nav"><i class="fa fa-chevron-left"></i> ' +linkText+ '</a>';
+            var holderHtml = '<a id="applet-header-nav-btn-right" class="ui-btn ui-btn-right header-link applet-header-nav-btn applet-header-nav"></a>';
+
+            var html =  '<div id="applet-header-main" class="applet-header" data-role="header" data-position="fixed" data-tap-toggle="false" xclass="blue-gradient">'+
+                '<h1 style="text-align:center" class="applet-header-title" id="applet-header-title">'+defaults.title+'</h1>'+
                 backHtml +
                 holderHtml+
                 '</div>';
@@ -152,7 +159,7 @@ Formelo.prototype.html = function() {
                 layout : 'My title'
             };
             var defaults = $.extend({}, option, options);
-            var html = '<div xid="applet-main" role="main">'+defaults.layout+'</div>';
+            var html = '<div xid="applet-main" class="applet-body" role="main">'+defaults.layout+'</div>';
             return html;
         },
         footer : function(options){}
@@ -288,7 +295,7 @@ Formelo.prototype.createPage = function(index, _options){
         this.html().body({layout : layout});
     //'</div>';
     if (!$('#'+id).length){
-        BODY.appends('<div class="applet-pages applet-'+this.mAppletID+'" data-role="page" id = "'+id+'"><div>');
+        BODY.appends('<div class="applet-pages applet-'+this.mAppletID+' applet-page" data-role="page" id = "'+id+'"><div>');
     }
     bodyContainer.pagecontainer('change', '#'+id, {
         transition: "none"
@@ -467,15 +474,16 @@ Formelo.prototype.ui = function(){
                 'unique' : null
             };
             var id = that.mAppletID+'-'+that.currentIndex;
-            var html = '<div style="height: 40px !important; max-height: 40px !important;" data-position ="fixed" data-tap-toggle="false" data-hide-during-focus="false" data-role="footer" data-position-fixed="true">'+
-                '<div style="height: inherit; margin-top: -4px" data-role="navbar">'+
-                '<ul>';
+            var html = '<div class="applet-footer" data-position ="fixed" data-tap-toggle="false" data-hide-during-focus="false" data-role="footer" data-position-fixed="true">'+
+                '<div xstyle="height: inherit; margin-top: -4px" data-role="navbar">'+
+                '<ul class="">';
             data.forEach(function(item){
                 var newDefault = $.extend({}, defaults, item);
                 html += '<li>'+
-                    '<a class="applet-footer-items" unique-id="'+item.unique+'" style="margin-top: -4%; /*border:none !important; /*background-color: #34495E !important;*/">'+
-                    '<span class="footer-icon '+(newDefault.active ? 'footer-active' : 'footer-not-active')+' " xstyle="color:'+(newDefault.active ? '#EB5055' : 'white')+'"><i class="'+newDefault.icon+'"></i></span>'+
-                    '<p class="footer_p '+(newDefault.active ? 'footer-active' : 'footer-not-active')+'" style="margin-top: -4px; /*color:'+(newDefault.active ? '#EB5055' : 'white')+' !important; */">'+newDefault.text+'</p>'+
+                    '<a class="applet-footer-items '+(newDefault.active ? 'applet-footer-active' : 'applet-footer-inactive')+'" ' +
+                    'data-iconpos="top" data-role="button" unique-id="'+item.unique+'" xstyle="margin-top: -4%;">' + newDefault.text +
+                    //'<span class="xfooter-icon '+(newDefault.active ? 'footer-active' : 'footer-not-active')+' "><i class="'+newDefault.icon+'"></i></span>'+
+                    //'<p class="xfooter_p '+(newDefault.active ? 'footer-active' : 'footer-not-active')+'" xstyle="margin-top: -4px;">'+newDefault.text+'</p>'+
                     '</a>'+
                     '</li>';
             });
@@ -1103,6 +1111,77 @@ Formelo.prototype.dependencies =  function(){
     }
 };
 
+Formelo.prototype.configuration = {
+    getConfig : function(code, params, successCB, errorCB){
+        var realm = this.mAppletConfig.realm.code;
+        var token = 'testToken';
+        var url = "http://"+realm+".formelo.com/api/v1/configurations/"+code+".json";
+        var header = {
+            Authorization: 'Bearer '+token
+        };
+        $.when(fetchData(url, params, 'GET', header))
+            .done(function(data){
+                console.log(data);
+                successCB(data);
+            })
+            .fail(function(err){
+                console.error(err);
+                errorCB(err);
+            });
+    },
+    setConfig : function(code, params, successCB, errorCB){
+        var realm = this.mAppletConfig.realm.code;
+        var token = 'testToken';
+        var url = "http://"+realm+".formelo.com/api/v1/configurations/"+code+".json";
+        var header = {
+            Authorization: 'Bearer '+token
+        };
+        $.when(fetchData(url, params, 'POST', header))
+            .done(function(data){
+                console.log(data);
+                successCB(data);
+            })
+            .fail(function(err){
+                console.error(err);
+                errorCB(err);
+            });
+    },
+    createConnection : function(params, successCB, errorCB){
+        var realm = this.mAppletConfig.realm.code;
+        var token = 'testToken';
+        var url = "https://"+realm+".formelo.com/api/v1/connections";
+        var header = {
+            Authorization: 'Bearer '+token
+        };
+        $.when(fetchData(url, params, 'POST', header))
+            .done(function(data){
+                console.log(data);
+                successCB(data);
+            })
+            .fail(function(err){
+                console.error(err);
+                errorCB(err);
+            });
+    },
+    createProxy : function(params, successCB, errorCB){
+        // Applet will get the current realm
+        var realm = this.mAppletConfig.realm.code;
+        var token = 'testToken';
+        var url = "https://"+realm+".formelo.com/api/v1/connections/yyyyy/proxy";
+        var header = {
+            Authorization: 'Bearer '+token
+        };
+        $.when(fetchData(url, params, 'POST', header))
+            .done(function(data){
+                console.log(data);
+                successCB(data);
+            })
+            .fail(function(err){
+                console.error(err);
+                errorCB(err);
+            });
+    }
+};
 
 
 
