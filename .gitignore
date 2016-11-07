@@ -10,6 +10,8 @@
 /app/providers/.*
 !/app/providers/.gitkeep
 
+/app/build/formelo.manifest
+
 /backup
 /.idea
 
