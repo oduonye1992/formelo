@@ -718,11 +718,11 @@ Formelo.prototype.ui = function(){
 				unique: '',
 				parameters : {}
 			};
-			var html = '<div class="nav">';
+			var html = '<div class="floater">';
 			for (var i = 0; i < data.length; i++){
 				var item = data[i];
 				var defaultItem = $.extend({}, defaults, item);
-				html += '<a style="color: white;" unique="'+defaultItem.unique+'" class="nav-item nav-float nav-count-'+(i+1)+'"><i class="'+defaultItem.icon+'"></i><span class="invisible">'+defaultItem.title+'</span></a>';
+				html += '<a style="color: white;" unique="'+defaultItem.unique+'" class="floater-item floater-float floater-count-'+(i+1)+'"><i class="'+defaultItem.icon+'"></i><span class="invisible">'+defaultItem.title+'</span></a>';
 				if ((i+1) == 4)
 					break;
 			}
@@ -730,10 +730,10 @@ Formelo.prototype.ui = function(){
 			html += '</div>';
 			var placeholder = that.mAppletID+'-'+that.currentIndex;
 			$('#'+placeholder).appends(html);
-			$(".nav .mask").on("click", function(e) { //touchstart
+			$(".floater .mask").on("click", function(e) { //touchstart
 				e.preventDefault(), $(this).parent().toggleClass("active")
 			});
-			$('.nav-float').click(function(){
+			$('.floater-float').click(function(){
 				var unique = $(this).attr('unique');
 				callback(unique);
 			});
