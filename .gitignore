@@ -1,3 +1,5 @@
-/app
+/app/dependencies/.*
+/app/pages/.*
+/app/providers/.*
 /backup
 /.idea
