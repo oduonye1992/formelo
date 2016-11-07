@@ -10,8 +10,15 @@ class Globals
     {
         // Create or return the folder
     }
+    public function createIfNotExist($filename){
+        if (!file_exists($filename)){
+            fopen($filename, "w");
+            fclose($filename);
+        }
+    }
     public static function getJSON(){
         $filename = "app/pages/pages.json";
+        // CHeck if file exist
         $handle = fopen($filename, "r");
         $contents = fread($handle, filesize($filename));
         fclose($handle);

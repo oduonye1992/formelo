@@ -1,5 +1,16 @@
-/app/dependencies/.*
+/app/dependencies/css/.*
+!/app/dependencies/css/.gitkeep
+
+/app/dependencies/js/.*
+!/app/dependencies/js/.gitkeep
+
 /app/pages/.*
+!/app/pages/.gitkeep
+
 /app/providers/.*
+!/app/providers/.gitkeep
+
 /backup
 /.idea
+
+.env_backup

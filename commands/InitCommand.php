@@ -39,7 +39,7 @@ class InitCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
         $io->title("Welcome to Formelo. Yayy!");
-
+        $config = (array) Globals::getJSON();
         // A S K   F O R   U S E R   P A R A M S
         $io->text('Formelo helps you build applications rapidly.');
         $appName = $io->ask("Application name");
@@ -48,7 +48,7 @@ class InitCommand extends Command
         $username = $io->ask("Enter your Username", "");
         $apikey = $io->ask("Enter your API Key", "");
         $appletMode = $io->choice('Make this applet Public ?', array('public', 'private'), 'public');
-        // Bug - Iteally a new referncen code will be set from the server
+        // Bug - Ideally a new referncen code will be set from the server
         // But for now, we'll randomly generate on
         $tempUniqueRefPrefix = Globals::generateRandomString(8);
         $appReferenceCode = $tempUniqueRefPrefix."-8d72-11e6-8e46-bbec5ba9c49f";

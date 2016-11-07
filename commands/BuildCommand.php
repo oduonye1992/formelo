@@ -68,7 +68,7 @@ class BuildCommand extends Command
          */
         $pages = $this->getJSON();
         if (!isset($pages)){
-            return $output->writeln("$pages Could not build. Check your permissions");
+            return $output->writeln("$pages Could not build. Check your permissions or Run 'php formelo init'");
         }
         if (!isset($pages->id)){
             return $io->error("Applet not initialized. Run 'php formelo init' ");
