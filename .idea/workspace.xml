@@ -20,7 +20,7 @@
     <favorites_list name="formelo" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5091278">
+    <splitter split-orientation="horizontal" split-proportion="0.6858169">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="DependencyCommand.php" pinned="false" current-in-tab="false">
@@ -38,16 +38,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="768">
                   <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GreetCommand.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/commands/GreetCommand.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -87,132 +77,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="formelo.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="formelo.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/build/js/app/formelo.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="284">
-                  <caret line="1101" column="15" selection-start-line="1101" selection-start-column="15" selection-end-line="1101" selection-end-column="15" />
+                <state relative-caret-position="452">
+                  <caret line="1175" column="10" selection-start-line="1175" selection-start-column="10" selection-end-line="1175" selection-end-column="10" />
                   <folding>
-                    <element signature="n#!!doc;n#Formelo#0" expanded="false" />
-                    <element signature="n#!!block;n#Formelo#0" expanded="false" />
-                    <element signature="e#847#1693#0" expanded="false" />
-                    <element signature="e#1736#1763#0" expanded="false" />
-                    <element signature="e#1796#2074#0" expanded="false" />
-                    <element signature="e#2118#2459#0" expanded="false" />
-                    <element signature="e#2498#2852#0" expanded="false" />
-                    <element signature="e#2891#6118#0" expanded="false" />
-                    <element signature="e#2957#3085#0" expanded="false" />
-                    <element signature="e#3115#3252#0" expanded="false" />
-                    <element signature="e#3268#3699#0" expanded="false" />
-                    <element signature="e#3717#4386#0" expanded="false" />
-                    <element signature="e#5793#6072#0" expanded="false" />
-                    <element signature="e#6157#7745#0" expanded="false" />
-                    <element signature="e#7748#7846#0" expanded="false" />
-                    <element signature="e#7897#8372#0" expanded="false" />
-                    <element signature="e#8421#9322#0" expanded="false" />
-                    <element signature="e#9367#9736#0" expanded="false" />
-                    <element signature="e#9781#10261#0" expanded="false" />
-                    <element signature="e#10320#11262#0" expanded="false" />
-                    <element signature="e#11313#12139#0" expanded="false" />
-                    <element signature="e#12188#12254#0" expanded="false" />
-                    <element signature="e#12294#12363#0" expanded="false" />
-                    <element signature="e#12366#12544#0" expanded="false" />
-                    <element signature="e#12571#14415#0" expanded="false" />
-                    <element signature="e#14456#14799#0" expanded="false" />
-                    <element signature="e#14802#14975#0" expanded="false" />
-                    <element signature="e#15009#33463#0" expanded="false" />
-                    <element signature="e#15053#15079#0" expanded="false" />
-                    <element signature="e#15126#16487#0" expanded="false" />
-                    <element signature="e#15500#16130#0" expanded="false" />
-                    <element signature="e#16170#16393#0" expanded="false" />
-                    <element signature="e#16523#16535#0" expanded="false" />
-                    <element signature="e#16545#16706#0" expanded="false" />
-                    <element signature="e#16748#18492#0" expanded="false" />
-                    <element signature="e#18551#19809#0" expanded="false" />
-                    <element signature="e#18580#18757#0" expanded="false" />
-                    <element signature="e#18797#18842#0" expanded="false" />
-                    <element signature="e#19819#20244#0" expanded="false" />
-                    <element signature="e#20304#20496#0" expanded="false" />
-                    <element signature="e#20548#23040#0" expanded="false" />
-                    <element signature="e#20818#22238#0" expanded="false" />
-                    <element signature="e#20836#21078#0" expanded="false" />
-                    <element signature="e#22290#23029#0" expanded="false" />
-                    <element signature="e#22308#22467#0" expanded="false" />
-                    <element signature="e#23092#25864#0" expanded="false" />
-                    <element signature="e#25921#27567#0" expanded="false" />
-                    <element signature="e#27592#27849#0" expanded="false" />
-                    <element signature="e#27606#27748#0" expanded="false" />
-                    <element signature="e#27859#28215#0" expanded="false" />
-                    <element signature="e#28269#30049#0" expanded="false" />
-                    <element signature="e#30095#31007#0" expanded="false" />
-                    <element signature="e#31052#31112#0" expanded="false" />
-                    <element signature="e#31160#32441#0" expanded="false" />
-                    <element signature="e#31189#31353#0" expanded="false" />
-                    <element signature="e#32177#32280#0" expanded="false" />
-                    <element signature="e#32327#32429#0" expanded="false" />
-                    <element signature="e#32461#32711#0" expanded="false" />
-                    <element signature="e#32721#33036#0" expanded="false" />
-                    <element signature="e#33111#33455#0" expanded="false" />
-                    <element signature="e#33466#33603#0" expanded="false" />
-                    <element signature="e#33640#34671#0" expanded="false" />
-                    <element signature="e#34710#36622#0" expanded="false" />
-                    <element signature="e#36625#36755#0" expanded="false" />
-                    <element signature="e#36795#36896#0" expanded="false" />
-                    <element signature="e#36899#37016#0" expanded="false" />
-                    <element signature="e#37055#37991#0" expanded="false" />
-                    <element signature="e#38035#39485#0" expanded="false" />
-                    <element signature="e#39488#39586#0" expanded="false" />
-                    <element signature="e#39624#39849#0" expanded="false" />
-                    <element signature="e#39880#41033#0" expanded="false" />
-                    <element signature="e#41064#42420#0" expanded="false" />
-                    <element signature="e#41112#42418#0" expanded="false" />
-                    <element signature="e#42423#42590#0" expanded="false" />
-                    <element signature="e#42639#42780#0" expanded="false" />
-                    <element signature="e#42823#43345#0" expanded="false" />
-                    <element signature="e#43387#43442#0" expanded="false" />
-                    <element signature="e#43445#43545#0" expanded="false" />
-                    <element signature="e#43590#44347#0" expanded="false" />
-                    <element signature="e#44384#46811#0" expanded="false" />
-                    <element signature="e#44444#44984#0" expanded="false" />
-                    <element signature="e#45044#45585#0" expanded="false" />
-                    <element signature="e#45646#46171#0" expanded="false" />
-                    <element signature="e#45823#45877#0" expanded="false" />
-                    <element signature="e#45966#46049#0" expanded="false" />
-                    <element signature="e#46082#46163#0" expanded="false" />
-                    <element signature="e#46227#46809#0" expanded="false" />
-                    <element signature="e#46461#46515#0" expanded="false" />
-                    <element signature="e#46604#46687#0" expanded="false" />
-                    <element signature="e#46720#46801#0" expanded="false" />
                     <element signature="n#!!doc;n#Profile#0" expanded="false" />
                     <element signature="n#!!block;n#Profile#0" expanded="false" />
-                    <element signature="e#47094#47283#0" expanded="false" />
-                    <element signature="e#47348#48495#0" expanded="false" />
-                    <element signature="e#48584#50587#0" expanded="false" />
-                    <element signature="e#48986#49670#0" expanded="false" />
-                    <element signature="e#49711#50582#0" expanded="false" />
-                    <marker date="1478514754000" expanded="true" signature="5546:5563" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="19146:19199" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="19367:19472" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="21873:21924" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="21992:22009" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="22047:22064" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="23815:23849" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="23902:23918" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="23997:24030" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="24135:24151" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="24265:24300" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="24412:24466" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="24506:24555" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="24623:24714" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="26532:26551" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="26758:26802" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="26838:26909" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="28810:28827" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="28868:28882" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="28889:28895" ph=" " />
-                    <marker date="1478514754000" expanded="true" signature="28895:28901" ph=" " />
-                    <marker date="1478514754000" expanded="true" signature="31585:31598" ph="..." />
-                    <marker date="1478514754000" expanded="true" signature="31878:31918" ph="..." />
+                    <element signature="e#35956#36097#0" expanded="false" />
+                    <element signature="e#36159#37057#0" expanded="false" />
+                    <element signature="e#37146#38648#0" expanded="false" />
+                    <element signature="e#37524#38004#0" expanded="false" />
+                    <element signature="e#38042#38643#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -228,11 +105,31 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/build/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="380">
-                  <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+                <state relative-caret-position="192">
+                  <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="material-refresh.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/build/vendor/pulltorefresh/material-refresh.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="formelo.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/build/css/formelo.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="140">
+                  <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -241,18 +138,8 @@
           <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/build/css/index.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="25944">
-                  <caret line="1081" column="1" selection-start-line="1081" selection-start-column="1" selection-end-line="1081" selection-end-column="1" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DeployCommand.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/commands/DeployCommand.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="356">
+                  <caret line="1080" column="19" selection-start-line="1080" selection-start-column="19" selection-end-line="1080" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -414,7 +301,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/commands/PublishCommand.php" />
         <option value="$PROJECT_DIR$/commands/UnpublishCommand.php" />
         <option value="$PROJECT_DIR$/formelo" />
         <option value="$PROJECT_DIR$/backup/aaa" />
@@ -463,8 +349,9 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/build/css/index.css" />
         <option value="$PROJECT_DIR$/commands/InitCommand.php" />
-        <option value="$PROJECT_DIR$/build/js/app/formelo.js" />
         <option value="$PROJECT_DIR$/build/index.html" />
+        <option value="$PROJECT_DIR$/build/css/formelo.css" />
+        <option value="$PROJECT_DIR$/build/js/app/formelo.js" />
       </list>
     </option>
   </component>
@@ -625,7 +512,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="index&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/index.html&#10;formelo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;forme&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;in&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/index.html&#10;form&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/formelo/build/js/app/formelo.js&#10;Glo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/Apps/Speed Test/commands/Globals.php&#10;ini&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/Apps/Speed Test/commands/InitCommand.php&#10;game.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/game/game.css&#10;home.css&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.css&#10;splas&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;descrip&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;Moltin&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;cart&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/cart/cart.js&#10;con&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/config.js&#10;fo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/footer.js&#10;openmo&#9;null&#9;null&#10;glo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js&#10;descri&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;index.ht&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/index.html&#10;home.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.css&#10;hom&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.js&#10;home&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.js&#10;spla&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;des&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;deta&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/details/details.js&#10;pag&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;formel&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;for&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;UserM&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;Mol&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;waitin&#9;null&#9;null&#10;deals&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/deals/deals.js&#10;setup&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/setup/setup.js&#10;pages&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;conf&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/config.js&#10;detail&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/details/details.js&#10;footer&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/footer.js&#10;splash&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;User&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;registrat&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.css&#10;home.cs&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.css&#10;UserMan&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;registra&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.js&#10;pro&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/product-create/product-create.js&#10;registration&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.html&#10;Mana&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;Help&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/Helpers.js&#10;inst&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/instagram/instagram.js&#10;produ&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/product-create/product-create.js&#10;details&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/details/details.js" />
+    <property name="SearchEverywhereHistoryKey" value="formelo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;form&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/css/formelo.css&#10;forme&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;in&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/index.html&#10;index&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/index.html&#10;Glo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/Apps/Speed Test/commands/Globals.php&#10;ini&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/Apps/Speed Test/commands/InitCommand.php&#10;game.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/game/game.css&#10;home.css&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.css&#10;splas&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;descrip&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;Moltin&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;cart&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/cart/cart.js&#10;con&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/config.js&#10;fo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/footer.js&#10;openmo&#9;null&#9;null&#10;glo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js&#10;descri&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;index.ht&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/index.html&#10;home.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.css&#10;hom&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.js&#10;home&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.js&#10;spla&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;des&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;deta&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/details/details.js&#10;pag&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;formel&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;for&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;UserM&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;Mol&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;waitin&#9;null&#9;null&#10;deals&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/deals/deals.js&#10;setup&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/setup/setup.js&#10;pages&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;conf&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/config.js&#10;detail&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/details/details.js&#10;footer&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/footer.js&#10;splash&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;User&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;registrat&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.css&#10;home.cs&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.css&#10;UserMan&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;registra&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.js&#10;pro&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/product-create/product-create.js&#10;registration&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.html&#10;Mana&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;Help&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/Helpers.js&#10;inst&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/instagram/instagram.js&#10;produ&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/product-create/product-create.js" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MobileStoreBackend" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -737,18 +624,18 @@
       <workItem from="1477300912485" duration="881000" />
       <workItem from="1477985616892" duration="296000" />
       <workItem from="1478340749750" duration="780000" />
-      <workItem from="1478506795448" duration="268000" />
+      <workItem from="1478506795448" duration="1966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213437000" />
+    <option name="totallyTimeSpent" value="215135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23828755" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10016155" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2997159" sideWeight="0.50646204" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -787,8 +674,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/pages/orders/orders.html" />
-    <entry file="file://$PROJECT_DIR$/app/pages/social-media-settings/social-media-settings.html" />
     <entry file="file://$PROJECT_DIR$/app/pages/social-media-settings/social-media-settings.js" />
     <entry file="file://$PROJECT_DIR$/app/pages/basic-store-settings/basic-store-settings.js" />
     <entry file="file://$PROJECT_DIR$/backup/moltin.js" />
@@ -1036,14 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25944">
-          <caret line="1081" column="1" selection-start-line="1081" selection-start-column="1" selection-end-line="1081" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/pages.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1062,140 +939,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/app/formelo.js">
+    <entry file="file://$PROJECT_DIR$/build/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="1101" column="15" selection-start-line="1101" selection-start-column="15" selection-end-line="1101" selection-end-column="15" />
-          <folding>
-            <element signature="n#!!doc;n#Formelo#0" expanded="false" />
-            <element signature="n#!!block;n#Formelo#0" expanded="false" />
-            <element signature="e#847#1693#0" expanded="false" />
-            <element signature="e#1736#1763#0" expanded="false" />
-            <element signature="e#1796#2074#0" expanded="false" />
-            <element signature="e#2118#2459#0" expanded="false" />
-            <element signature="e#2498#2852#0" expanded="false" />
-            <element signature="e#2891#6118#0" expanded="false" />
-            <element signature="e#2957#3085#0" expanded="false" />
-            <element signature="e#3115#3252#0" expanded="false" />
-            <element signature="e#3268#3699#0" expanded="false" />
-            <element signature="e#3717#4386#0" expanded="false" />
-            <element signature="e#5793#6072#0" expanded="false" />
-            <element signature="e#6157#7745#0" expanded="false" />
-            <element signature="e#7748#7846#0" expanded="false" />
-            <element signature="e#7897#8372#0" expanded="false" />
-            <element signature="e#8421#9322#0" expanded="false" />
-            <element signature="e#9367#9736#0" expanded="false" />
-            <element signature="e#9781#10261#0" expanded="false" />
-            <element signature="e#10320#11262#0" expanded="false" />
-            <element signature="e#11313#12139#0" expanded="false" />
-            <element signature="e#12188#12254#0" expanded="false" />
-            <element signature="e#12294#12363#0" expanded="false" />
-            <element signature="e#12366#12544#0" expanded="false" />
-            <element signature="e#12571#14415#0" expanded="false" />
-            <element signature="e#14456#14799#0" expanded="false" />
-            <element signature="e#14802#14975#0" expanded="false" />
-            <element signature="e#15009#33463#0" expanded="false" />
-            <element signature="e#15053#15079#0" expanded="false" />
-            <element signature="e#15126#16487#0" expanded="false" />
-            <element signature="e#15500#16130#0" expanded="false" />
-            <element signature="e#16170#16393#0" expanded="false" />
-            <element signature="e#16523#16535#0" expanded="false" />
-            <element signature="e#16545#16706#0" expanded="false" />
-            <element signature="e#16748#18492#0" expanded="false" />
-            <element signature="e#18551#19809#0" expanded="false" />
-            <element signature="e#18580#18757#0" expanded="false" />
-            <element signature="e#18797#18842#0" expanded="false" />
-            <element signature="e#19819#20244#0" expanded="false" />
-            <element signature="e#20304#20496#0" expanded="false" />
-            <element signature="e#20548#23040#0" expanded="false" />
-            <element signature="e#20818#22238#0" expanded="false" />
-            <element signature="e#20836#21078#0" expanded="false" />
-            <element signature="e#22290#23029#0" expanded="false" />
-            <element signature="e#22308#22467#0" expanded="false" />
-            <element signature="e#23092#25864#0" expanded="false" />
-            <element signature="e#25921#27567#0" expanded="false" />
-            <element signature="e#27592#27849#0" expanded="false" />
-            <element signature="e#27606#27748#0" expanded="false" />
-            <element signature="e#27859#28215#0" expanded="false" />
-            <element signature="e#28269#30049#0" expanded="false" />
-            <element signature="e#30095#31007#0" expanded="false" />
-            <element signature="e#31052#31112#0" expanded="false" />
-            <element signature="e#31160#32441#0" expanded="false" />
-            <element signature="e#31189#31353#0" expanded="false" />
-            <element signature="e#32177#32280#0" expanded="false" />
-            <element signature="e#32327#32429#0" expanded="false" />
-            <element signature="e#32461#32711#0" expanded="false" />
-            <element signature="e#32721#33036#0" expanded="false" />
-            <element signature="e#33111#33455#0" expanded="false" />
-            <element signature="e#33466#33603#0" expanded="false" />
-            <element signature="e#33640#34671#0" expanded="false" />
-            <element signature="e#34710#36622#0" expanded="false" />
-            <element signature="e#36625#36755#0" expanded="false" />
-            <element signature="e#36795#36896#0" expanded="false" />
-            <element signature="e#36899#37016#0" expanded="false" />
-            <element signature="e#37055#37991#0" expanded="false" />
-            <element signature="e#38035#39485#0" expanded="false" />
-            <element signature="e#39488#39586#0" expanded="false" />
-            <element signature="e#39624#39849#0" expanded="false" />
-            <element signature="e#39880#41033#0" expanded="false" />
-            <element signature="e#41064#42420#0" expanded="false" />
-            <element signature="e#41112#42418#0" expanded="false" />
-            <element signature="e#42423#42590#0" expanded="false" />
-            <element signature="e#42639#42780#0" expanded="false" />
-            <element signature="e#42823#43345#0" expanded="false" />
-            <element signature="e#43387#43442#0" expanded="false" />
-            <element signature="e#43445#43545#0" expanded="false" />
-            <element signature="e#43590#44347#0" expanded="false" />
-            <element signature="e#44384#46811#0" expanded="false" />
-            <element signature="e#44444#44984#0" expanded="false" />
-            <element signature="e#45044#45585#0" expanded="false" />
-            <element signature="e#45646#46171#0" expanded="false" />
-            <element signature="e#45823#45877#0" expanded="false" />
-            <element signature="e#45966#46049#0" expanded="false" />
-            <element signature="e#46082#46163#0" expanded="false" />
-            <element signature="e#46227#46809#0" expanded="false" />
-            <element signature="e#46461#46515#0" expanded="false" />
-            <element signature="e#46604#46687#0" expanded="false" />
-            <element signature="e#46720#46801#0" expanded="false" />
-            <element signature="n#!!doc;n#Profile#0" expanded="false" />
-            <element signature="n#!!block;n#Profile#0" expanded="false" />
-            <element signature="e#47094#47283#0" expanded="false" />
-            <element signature="e#47348#48495#0" expanded="false" />
-            <element signature="e#48584#50587#0" expanded="false" />
-            <element signature="e#48986#49670#0" expanded="false" />
-            <element signature="e#49711#50582#0" expanded="false" />
-            <marker date="1478514754000" expanded="true" signature="5546:5563" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="19146:19199" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="19367:19472" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="21873:21924" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="21992:22009" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="22047:22064" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="23815:23849" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="23902:23918" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="23997:24030" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="24135:24151" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="24265:24300" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="24412:24466" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="24506:24555" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="24623:24714" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="26532:26551" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="26758:26802" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="26838:26909" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="28810:28827" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="28868:28882" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="28889:28895" ph=" " />
-            <marker date="1478514754000" expanded="true" signature="28895:28901" ph=" " />
-            <marker date="1478514754000" expanded="true" signature="31585:31598" ph="..." />
-            <marker date="1478514754000" expanded="true" signature="31878:31918" ph="..." />
-          </folding>
+        <state relative-caret-position="356">
+          <caret line="1080" column="19" selection-start-line="1080" selection-start-column="19" selection-end-line="1080" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/vendor/pulltorefresh/material-refresh.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="192">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/css/formelo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/app/formelo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="1175" column="10" selection-start-line="1175" selection-start-column="10" selection-end-line="1175" selection-end-column="10" />
+          <folding>
+            <element signature="n#!!doc;n#Profile#0" expanded="false" />
+            <element signature="n#!!block;n#Profile#0" expanded="false" />
+            <element signature="e#35956#36097#0" expanded="false" />
+            <element signature="e#36159#37057#0" expanded="false" />
+            <element signature="e#37146#38648#0" expanded="false" />
+            <element signature="e#37524#38004#0" expanded="false" />
+            <element signature="e#38042#38643#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
