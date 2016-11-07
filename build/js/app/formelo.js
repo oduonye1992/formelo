@@ -471,7 +471,8 @@ Formelo.prototype.ui = function(){
                 'text' : 'placeholder',
                 'link' : null,
                 'active' :  false,
-                'unique' : null
+                'unique' : null,
+                parameters : {}
             };
             var id = that.mAppletID+'-'+that.currentIndex;
             var html = '<div class="applet-footer" data-position ="fixed" data-tap-toggle="false" data-hide-during-focus="false" data-role="footer" data-position-fixed="true">'+
@@ -481,9 +482,7 @@ Formelo.prototype.ui = function(){
                 var newDefault = $.extend({}, defaults, item);
                 html += '<li>'+
                     '<a class="applet-footer-items '+(newDefault.active ? 'applet-footer-active' : 'applet-footer-inactive')+'" ' +
-                    'data-iconpos="top" data-role="button" unique-id="'+item.unique+'" xstyle="margin-top: -4%;">' + newDefault.text +
-                    //'<span class="xfooter-icon '+(newDefault.active ? 'footer-active' : 'footer-not-active')+' "><i class="'+newDefault.icon+'"></i></span>'+
-                    //'<p class="xfooter_p '+(newDefault.active ? 'footer-active' : 'footer-not-active')+'" xstyle="margin-top: -4px;">'+newDefault.text+'</p>'+
+                    'data-iconpos="top" data-role="button" unique-id="'+item.unique+'" parameters = \''+JSON.stringify(item.parameters)+'\' xstyle="margin-top: -4%;">' + newDefault.text +
                     '</a>'+
                     '</li>';
             });
@@ -493,8 +492,9 @@ Formelo.prototype.ui = function(){
             BODY.trigger('create');
             $(placeholder+' .applet-footer-items').click(function(){
                 var unique = $(this).attr('unique-id');
+                var parameters = $(this).attr('parameters');
                 if (unique && callback){
-                    callback(unique);
+                    callback(unique, JSON.parse(parameters));
                 }
             });
         },
@@ -503,7 +503,8 @@ Formelo.prototype.ui = function(){
                 'icon' : '',
                 'text' : '',
                 'colour' :  '#2980b9',
-                'unique' : null
+                'unique' : null,
+                parameters : {}
             };
             if (!data || !data.length){
                 return false;
@@ -512,9 +513,8 @@ Formelo.prototype.ui = function(){
             var i = 1;
             data.forEach(function(item){
                 var newDefault = $.extend({}, defaults, item);
-                html += '<div unique="'+item.unique+'" class="row holder-clickable-item" style="height: 20vh;background-color: '+newDefault.colour+';">'+
+                html += '<div unique="'+item.unique+'" parameters = \''+JSON.stringify(item.parameters)+'\' class="row holder-clickable-item" style="height: 20vh;background-color: '+newDefault.colour+';">'+
                     '<div class="col-xs-2" style="">'+
-                    //'<p style="margin-top:40%; color: white;font-weight: 400; text-align: center;">'+i+'</p>'+
                     '</div>'+
                     '<div class="col-xs-10">'+
                     '<p style="font-size: x-large ;font-weight: 400;color: white;text-align: center;line-height: 20vh;margin-left: -20%;">'+newDefault.text+'</p>'+
@@ -524,18 +524,8 @@ Formelo.prototype.ui = function(){
             });
             $(placeHolder).html(html);
             $('.holder-clickable-item').click(function(){
-                callback($(this).attr('unique'));
+                callback($(this).attr('unique'), JSON.parse($(this).attr('parameters')));
             });
-        },
-        spinner: function() {
-            return {
-                start : function(){
-
-                },
-                stop : function(){
-
-                }
-            };
         },
         /**
          * Creates a list for you, setting the click listeners and other cool stuffs
@@ -545,6 +535,13 @@ Formelo.prototype.ui = function(){
          * @example new formelo().ui().listAdapter(arrays, '#placeholder').attach(function(callback){});
          * @todo Add custom mapping and interactions
          * **/
+        customAdapter : function(data, placeholder, parser){
+            data.forEach(function(item){
+                var state = parser(item);
+                console.log(state);
+                $(placeholder).append(state);
+            });
+        },
         listAdapter : function(items, placeholder){
             if (!items) throw new Error('Item not specified'); // I am going home now
             var html = '<div class="card share full-height no-margin-card" data-social="item">';
@@ -559,10 +556,11 @@ Formelo.prototype.ui = function(){
                     description : '',
                     time : '',
                     image : '',
-                    unique: ''
+                    unique: '',
+                    parameters : {}
                 };
                 var defaultItem = $.extend({}, defaults, item);
-                html += '<div class="card-header clearfix '+identifier+'" unique = "'+defaultItem.unique+'">' +
+                html += '<div class="card-header clearfix '+identifier+'" unique = "'+defaultItem.unique+'" parameters = \''+JSON.stringify(defaultItem.parameters)+'\'>' +
                     '<div class="user-pic pull-left">' +
                     '<img alt="Profile Image" width="33" height="33" data-src-retina="' + defaultItem.image + '" data-src="' + defaultItem.image + '" src="' + defaultItem.image + '">' +
                     '</div>' +
@@ -584,9 +582,10 @@ Formelo.prototype.ui = function(){
                     $(placeholder).html(html);
                     $(placeholder).find('.'+identifier).click(function(){
                         var unique = $(this).attr('unique');
+                        var parameters = $(this).attr('parameters');
                         if (unique){
                             if (callback){
-                                callback(unique);
+                                callback(unique, JSON.parse(parameters));
                             }
                         }
                     });
@@ -604,10 +603,11 @@ Formelo.prototype.ui = function(){
                     description : '',
                     time : '',
                     image : '',
-                    unique: ''
+                    unique: '',
+                    parameters : ''
                 };
                 var defaultItem = $.extend({}, defaults, item);
-                html += '<div class="col-xs-6 col-sm-3 col-md-3 applet-list-item '+identifier+' clickable-panel" unique="'+defaultItem.unique+'" style="padding: 12px; margin-bottom: 6px;">' +
+                html += '<div class="col-xs-6 col-sm-3 col-md-3 applet-list-item '+identifier+' clickable-panel" parameters = \''+JSON.stringify(item.parameters)+'\' unique="'+defaultItem.unique+'" style="padding: 12px; margin-bottom: 6px;">' +
                     '<div class = "row" style="height: inherit;">' +
                     '<div class="col-xs-12 col-sm-12 col-md-12" style = "padding: 0px; text-align: center;">' +
                     '<img aaa ="' + i + '" class="qmyImg qloadingImg" src="img/loading.png" style="max-width: 100%;" />' +
@@ -633,9 +633,10 @@ Formelo.prototype.ui = function(){
                     });
                     $(placeholder).find('.'+identifier).click(function(){
                         var unique = $(this).attr('unique');
+                        var parameters = $(this).attr('parameters');
                         if (unique){
                             if (callback){
-                                callback(unique);
+                                callback(unique, JSON.parse(parameters));
                             }
                         }
                     });
@@ -694,6 +695,7 @@ Formelo.prototype.ui = function(){
          * @param _data
          * @param callback
          * @param options
+         * @deprecated
          */
         sidemenu : function(_data, callback, options){
             var data = _data || [];
@@ -732,8 +734,57 @@ Formelo.prototype.ui = function(){
             }
             return $('#'+id);
         },
+        sidebar : function(parser, _options){
+            var options = {
+                position : 'right',
+                display : 'overlay',
+                fixed : true
+            };
+            var def = $.extend({}, options, _options);
+            var placeholder = that.mAppletID+'-'+that.currentIndex;
+            var rand = str_random(10);
+            var id = that.mAppletID+'-'+that.currentIndex+'-'+rand+'-panel';
+            var html = '<div class="applet-panel" data-role="panel" id="'+id+'" data-display="'+def.display+'" data-position-fixed="'+def.fixed+'" data-position="'+def.position+'">';
+            html += '</div>';
+            var scope = {
+                close : function(){
+                    $('#'+id).panel('close');
+                }
+            };
+            var state = parser(scope);
+            $('#'+placeholder).appends(html).trigger('refresh');
+            $('#'+id).append(state).panel().panel('open');
+        },
         modal : function(title, body, type){
             return openModal(title, body, type);
+        },
+        floatingBar : function(data, callback){
+            var defaults = {
+                title : '',
+                description : '',
+                icon : '',
+                unique: '',
+                parameters : {}
+            };
+            var html = '<div class="nav">';
+            for (var i = 0; i < data.length; i++){
+                var item = data[i];
+                var defaultItem = $.extend({}, defaults, item);
+                html += '<a style="color: white;" unique="'+defaultItem.unique+'" class="nav-item nav-float nav-count-'+(i+1)+'"><i class="'+defaultItem.icon+'"></i><span class="invisible">'+defaultItem.title+'</span></a>';
+                if ((i+1) == 4)
+                    break;
+            }
+            html += '<a style="background-color: #e74c3c; color: white;" href="#toggle" class="mask"><i class="fa fa-plus"></i></a>';
+            html += '</div>';
+            var placeholder = that.mAppletID+'-'+that.currentIndex;
+            $('#'+placeholder).appends(html);
+            $(".nav .mask").on("click", function(e) { //touchstart
+                e.preventDefault(), $(this).parent().toggleClass("active")
+            });
+            $('.nav-float').click(function(){
+                var unique = $(this).attr('unique');
+                callback(unique);
+            });
         },
         spinner : {
             show : function(title, message){
@@ -1182,7 +1233,6 @@ Formelo.prototype.configuration = {
             });
     }
 };
-
 
 
 

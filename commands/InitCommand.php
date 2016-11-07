@@ -47,7 +47,7 @@ class InitCommand extends Command
         $appTeam = $io->ask("What is your Team's name. e.g demo ", "");
         $username = $io->ask("Enter your Username", "");
         $apikey = $io->ask("Enter your API Key", "");
-        $appletMode = $io->choice('Make this applet Public ?', array('public', 'private'), 'private');
+        $appletMode = $io->choice('Make this applet Public ?', array('public', 'private'), 'public');
         // Bug - Iteally a new referncen code will be set from the server
         // But for now, we'll randomly generate on
         $tempUniqueRefPrefix = Globals::generateRandomString(8);
