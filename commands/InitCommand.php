@@ -39,7 +39,6 @@ class InitCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
         $io->title("Welcome to Formelo. Yayy!");
-        $config = (array) Globals::getJSON();
         // A S K   F O R   U S E R   P A R A M S
         $io->text('Formelo helps you build applications rapidly.');
         $appName = $io->ask("Application name");
