@@ -1114,7 +1114,7 @@ Formelo.prototype.require = function(key){
 			eval(exports[key].data);
 			console.log(key + ' has been "evaled"');
 			console.log(JSON.stringify(this.mModules));//
-			console.log("Done loading");
+			console.log("Done loading ");
 			return this.mModules[key];
 		} else {
 			throw new Error('Item could not be found.. '+key);
@@ -1231,7 +1231,6 @@ Formelo.prototype.configuration = {
 			});
 	}
 };
-
 
 
 

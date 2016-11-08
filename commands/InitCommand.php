@@ -47,12 +47,24 @@ class InitCommand extends Command
         $username = $io->ask("Enter your Username", "");
         $apikey = $io->ask("Enter your API Key", "");
         $appletMode = $io->choice('Make this applet Public ?', array('public', 'private'), 'public');
-        // Bug - Ideally a new referncen code will be set from the server
+        // B u g - I d e a l l y   a   n e w   r e f e r n c e n   c o d e   w i l l   b e   s e t   f r o m   t h e   s e r v e r
         // But for now, we'll randomly generate on
         $tempUniqueRefPrefix = Globals::generateRandomString(8);
         $appReferenceCode = $tempUniqueRefPrefix."-8d72-11e6-8e46-bbec5ba9c49f";
         // U P D A T E   P A G E S   C O N F I G
-        $config = (array) Globals::getJSON();
+        //$config = (array) Globals::getJSON();
+        $config = [
+            "pages" => [],
+            "root" => [],
+            "providers" => [],
+            "dependencies" => [
+                "js" => [],
+                "css" => []
+            ],
+            "status" => "live",
+            "mode" => "dynamic",
+            "icon_url" => "",
+        ];
         $config['name'] = $appName;
         $config['description'] = $appDesc;
         $config['scope'] = $appletMode;
@@ -60,6 +72,7 @@ class InitCommand extends Command
         $config['cred']->api_key = $apikey;
         $config['code'] = $appTeam;
         $config['reference_code'] = $appReferenceCode;
+
 
         $conf = [
             "icon_url" => "https://cdn.formelo.com/uploads/20151216/12/1450268948584-facebook-256x256.png",
@@ -89,7 +102,6 @@ class InitCommand extends Command
         $io->text('Creating...');
         $client = new Client();
         try {
-            //"http://requestb.in/1kxrrsp1",[//
             $res = $client->request('POST',  "https://$appTeam.formelo.com/api/v1/applets", [
                 'auth' => [$username, $apikey],
                 'headers'  => [
