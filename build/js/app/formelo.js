@@ -21,6 +21,7 @@ function Formelo(appletID, backlink, config){
 	this.backStack = [];
 	this.dependencies = {};
 	this.mModules = {}; // Hold global modules
+	this.fallbackIndexPage = 'index';
 	this.getAppletConfig = function(appletID, callback){
 		var that = this;
 		if (that.mAppletConfig !== null){
@@ -34,7 +35,6 @@ function Formelo(appletID, backlink, config){
 				.done(function(formConfig){
 					console.log('Gotten conf from cache');
 					that.mAppletConfig = formConfig;
-					alert(that.mAppletConfig.root);
 					that.rootPage = that.mAppletConfig.root;
 					callback(formConfig);
 				})
@@ -67,12 +67,18 @@ Formelo.prototype.buildPages = function(){
 	var obj = {};
 	if (this.mAppletConfig && this.mAppletConfig.pages &&
 		this.mAppletConfig.pages.length){
+		var i = 0;
 		this.mAppletConfig.pages.forEach(function(item){
 			obj[item.key] = item;
+			if (i == 0){
+				this.fallbackIndexPage = item.key;
+				console.log('root page set to '+this.fallbackIndexPage);
+			}
+			i++;
 		});
 	}
 	this.mAppletConfig.pages = obj;
-	console.log('Pages is now '+JSON.stringify(this.mAppletConfig.pages));
+	//console.log('Pages is now '+JSON.stringify(this.mAppletConfig.pages));
 };
 
 Formelo.prototype.close = function(){
@@ -128,10 +134,10 @@ Formelo.prototype.html = function() {
 			}
 		},
 		header : function(options){
-
 			var option = {
 				title : 'My title',
-				isMainActivity : true
+				isMainActivity : true,
+				toChild : false
 			};
 			var defaults = $.extend({}, option, options);
 			var showBackUrl = '';
@@ -144,7 +150,8 @@ Formelo.prototype.html = function() {
 				showBackUrl = 'onclick="return formelo.navigation().back();"';
 				linkText = '';
 			}
-			var backHtml = '<a '+showBackUrl+' '+exitUrl+' class="ui-btn ui-btn-left header-link applet-header-nav-btn applet-header-nav"><i class="fa fa-chevron-left"></i> ' +linkText+ '</a>';
+			console.log(defaults.toChild);
+			var backHtml = !defaults.toChild ? '' : '<a '+showBackUrl+' '+exitUrl+' class="ui-btn ui-btn-left header-link applet-header-nav-btn applet-header-nav"><i class="fa fa-chevron-left"></i> ' +linkText+ '</a>';
 			var holderHtml = '<a id="applet-header-nav-btn-right" class="ui-btn ui-btn-right header-link applet-header-nav-btn applet-header-nav"></a>';
 
 			var html =  '<div id="applet-header-main" class="applet-header" data-role="header" data-position="fixed" data-tap-toggle="false" xclass="blue-gradient">'+
@@ -182,7 +189,6 @@ Formelo.prototype.start = function(){
 		try {
 			that.buildPages();
 			if (that.mAppletConfig && that.mAppletConfig.pages){
-				console.log(that.mAppletConfig);
 				that.currentIndex = that.rootPage;
 				that.runProvider();
 				console.log('Loaded providers');
@@ -190,7 +196,9 @@ Formelo.prototype.start = function(){
 				console.log('Loaded dependencies');
 				console.log('Root page is '+that.rootPage);
 				if (!that.rootPage || that.rootPage == ""){
-					throw new Error('No root page');
+					console.error('No root page, falling back to '+that.fallbackIndexPage);
+					that.rootPage = that.fallbackIndexPage;
+					console.log('root page is '+that.rootPage);
 				}
 				that.runCode(that.rootPage);
 				console.log('Loaded code');
@@ -290,10 +298,10 @@ Formelo.prototype.createPage = function(index, _options){
 	options['isMainActivity'] = this.currentIndex === this.rootPage;
 	options['title'] = this.mAppletConfig.pages[index].name;
 	var layout = this.mAppletConfig.pages[index].layout;
-	var html = //'<div class="applet-pages applet-'+this.mAppletID+'" data-role="page" id = "'+id+'">'+
+	var html =
 		this.html().header(options) +
 		this.html().body({layout : layout});
-	//'</div>';
+
 	if (!$('#'+id).length){
 		BODY.appends('<div class="applet-pages applet-'+this.mAppletID+' applet-page" data-role="page" id = "'+id+'"><div>');
 	}
@@ -928,10 +936,19 @@ Formelo.prototype.navigation = function(){
 		 * @example openActivity(3, {adas:daa});
 		 */
 		openActivity : function(index, paramsObj){
+			this.navigateTo(index, paramsObj);
+		},
+		navigateTo : function(index, paramsObj){
 			that.currentIndex = index;
 			that.runCode(index, paramsObj);
 			that.runCss(index);
 			that.createPage(index, {IsMainActivity: index === 0});
+		},
+		navigateToChild : function(index, paramsObj){
+			that.currentIndex = index;
+			that.runCode(index, paramsObj);
+			that.runCss(index);
+			that.createPage(index, {IsMainActivity: index === 0, toChild : true});
 		},
 		result : function(param){
 			// Go back and call the in
@@ -1003,6 +1020,34 @@ Formelo.prototype.helpers = {
 		}
 		var blob = new Blob(byteArrays, {type: contentType});
 		return blob;
+	},
+	/**
+	 *  // Returns a function, that, as long as it continues to be invoked, will not
+	 // be triggered. The function will be called after it stops being called for
+	 // N milliseconds. If `immediate` is passed, trigger the function on the
+	 // leading edge, instead of the trailing.
+	 * @param func
+	 * @param wait
+	 * @param immediate
+	 * @returns {Function}
+	 * @example var myEfficientFn = debounce(function() {
+	                // All the taxing stuff you do
+                }, 250);
+	 window.addEventListener('resize', myEfficientFn);
+	 */
+	debounce : function (func, wait, immediate) {
+		var timeout;
+		return function() {
+			var context = this, args = arguments;
+			var later = function() {
+				timeout = null;
+				if (!immediate) func.apply(context, args);
+			};
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow) func.apply(context, args);
+		};
 	}
 };
 
@@ -1058,6 +1103,7 @@ Formelo.prototype.exports = function(key, value){
 		throw new Error('Please pass in a key and value.');
 	}
 };
+
 Formelo.prototype.require = function(key){
 	if (key && this.mModules[key]){
 		return this.mModules[key];
@@ -1068,7 +1114,7 @@ Formelo.prototype.require = function(key){
 			eval(exports[key].data);
 			console.log(key + ' has been "evaled"');
 			console.log(JSON.stringify(this.mModules));//
-			console.log("Done loading ");
+			console.log("Done loading");
 			return this.mModules[key];
 		} else {
 			throw new Error('Item could not be found.. '+key);
@@ -1185,6 +1231,8 @@ Formelo.prototype.configuration = {
 			});
 	}
 };
+
+
 
 
 
