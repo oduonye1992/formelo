@@ -145,32 +145,7 @@ function initApp(){
         //onReady();
     }, false);
 
-    // SET EVENTS
-    $(window).on("Xorientationchange",function(){
-        adjustHeightsToViewport();
-    });
-    window.addEventListener("batterylow", function(status){
-        showMessage('Battery Low! Please save your form');
-    }, false);
-    window.addEventListener("batterycritical", function(status){
-        showMessage('Battery Critical! Please save your form');
-        Activity.getCurrentStackObject().find('.exitForm:first').trigger('click');
-    }, false);
-
-    $(document).on('pageinit', function(){
-        //$('.home-link').attr('src', globals.files.images.favicon);
-        //$('.profile-text').html('<strong>'+(getUserCredentials() !== null ? getUserCredentials().name : "Unknown user")+'</strong>');
-        //$('.profile-realm').html(window.localStorage.realm_full ? JSON.parse(window.localStorage.realm_full).name.substr(0, 30) : '');
-        $.mobile.keepNative = "select,input"; /* jQuery Mobile 1.4 and higher*/
-        //adjustHeightsToViewport();
-        //loader.hide();
-        /*if(customisationCount === 0){
-            //initCustomisation();
-            $('.aba').removeClass('hidden-content');
-            customisationCount++;
-        }*/
-    });
-
+    $(document).on('pageinit', function(){});
 }
 function validateAccess(successCB, errorCB){
     if (!successCB || !errorCB) throw new Error ('Error and Success callback not passed');

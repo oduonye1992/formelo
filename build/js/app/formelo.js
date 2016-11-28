@@ -151,10 +151,10 @@ Formelo.prototype.html = function() {
 				linkText = '';
 			}
 			console.log(defaults.toChild);
-			var backHtml = !defaults.toChild ? '' : '<a '+showBackUrl+' '+exitUrl+' class="ui-btn ui-btn-left header-link applet-header-nav-btn applet-header-nav"><i class="fa fa-chevron-left"></i> ' +linkText+ '</a>';
+			var backHtml = !defaults.toChild ? '<a id="applet-header-nav-btn-left" class="ui-btn ui-btn-left header-link applet-header-nav-btn applet-header-nav"></a>' : '<a id="applet-header-nav-btn-left" '+showBackUrl+' '+exitUrl+' class="ui-btn ui-btn-left header-link applet-header-nav-btn applet-header-nav"><i class="fa fa-chevron-left"></i> ' +linkText+ '</a>';
 			var holderHtml = '<a id="applet-header-nav-btn-right" class="ui-btn ui-btn-right header-link applet-header-nav-btn applet-header-nav"></a>';
 
-			var html =  '<div id="applet-header-main" class="applet-header" data-role="header" data-position="fixed" data-tap-toggle="false" xclass="blue-gradient">'+
+			var html =  '<div id="applet-header-main" class="applet-header" data-role="header" data-position="fixed" data-tap-toggle="false" style="top: 20px !important;">'+
 				'<h1 style="text-align:center" class="applet-header-title" id="applet-header-title">'+defaults.title+'</h1>'+
 				backHtml +
 				holderHtml+
@@ -277,6 +277,7 @@ Formelo.prototype.runProvider = function(){
 };
 
 Formelo.prototype.runCss = function(index){
+	$('.applet-loaded-stylesheets').remove();
 	var css = this.mAppletConfig.pages[index].css;
 	if (css){
 		var id = this.mAppletID+'-'+index+'-style';
@@ -298,7 +299,9 @@ Formelo.prototype.createPage = function(index, _options){
 	options['isMainActivity'] = this.currentIndex === this.rootPage;
 	options['title'] = this.mAppletConfig.pages[index].name;
 	var layout = this.mAppletConfig.pages[index].layout;
+	var exitHtml = '<div class="formelo-exit"  style=""><p><i class="fa fa-close"></i></p></div>';
 	var html =
+		exitHtml+
 		this.html().header(options) +
 		this.html().body({layout : layout});
 
@@ -312,6 +315,11 @@ Formelo.prototype.createPage = function(index, _options){
 	var onCreateEvent = new Event(this.constants.events.ON_CREATE+'-'+this.currentIndex);
 	this.backStack.push(this.currentIndex);
 	this.placeholder.dispatchEvent(onCreateEvent);
+	// Handle Exit button click
+	var that = this;
+	$('.formelo-exit').click(function(){
+		that.close();
+	});
 };
 
 Formelo.prototype.show = function(_title, _body){
@@ -432,16 +440,18 @@ Formelo.prototype.ui = function(){
 		/**
 		 *
 		 */
-		actionBars : function(items, callback){
+		actionBars : function(items, callback, _position){
+			var position  = _position || 'right';
+			var identifier = position == 'right' ? '#applet-header-nav-btn-right' : '#applet-header-nav-btn-left';
 			var showSingleAction = function(that){
 				var id = formelo.mAppletID+'-'+formelo.currentIndex;
-				$('#'+id).find('#applet-header-nav-btn-right').html(items[0].name).click(function(){
+				$('#'+id).find(identifier).html(items[0].name).click(function(){
 					callback(items[0].unique);
 				});
 			};
 			var showMultipleActions = function(that, items, callback){
 				var id = that.mAppletID+'-'+that.currentIndex;
-				$('#'+id).find('#applet-header-nav-btn-right').html('<i class="fa fa-ellipsis-h"></i>').click(function(){
+				$('#'+id).find(identifier).html('<i class="fa fa-ellipsis-h"></i>').click(function(){
 					var actionPlaceholder = id+'-actionbar';
 					var placeholder = '<div id="'+id+'-actionbar"></div>';
 					var mod = that.ui().modal('Options', placeholder);
@@ -967,6 +977,7 @@ Formelo.prototype.navigation = function(){
 				$.mobile.back();
 				that.backStack.pop();
 				that.currentIndex = that.backStack[that.backStack.length - 1];
+				that.runCss(that.currentIndex);
 			}
 		},
 		openBrowser : function(link){

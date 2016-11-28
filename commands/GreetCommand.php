@@ -55,20 +55,58 @@ class GreetCommand extends Command
     });
 
     formelo.event().onIntent(function(params){
-        var data = params.detail;
         // Receive parameters from calling page
+        var data = params.detail;
     });
 
     formelo.event().onClose(function(){
         // Override close button
-        // formelo.navigation.stopPropagation()
+        // formelo.navigation().stopPropagation()
     });
 }());
 EOD;
+        $fileCssContent = <<<EOD
+/* O V E R R I D E   C S S   S T Y L E S  */
+
+/* O V E R R I D E   P A G E  */
+.applet-page {
+    height: 100vh;
+}
+
+/* O V E R R I D E   H E A D E R   */
+.applet-header {
+    
+}
+.applet-header-title {
+    
+}
+.applet-header-nav {
+    color: white !important;
+}
+
+/* O V E R R I D E   B O D Y   */
+.applet-body {
+   
+}
+
+/* O V E R R I D E   F O O T E R   */
+.applet-footer {
+   
+}
+.applet-footer-inactive {
+   
+}
+.applet-footer-active {
+   
+}
+
+EOD;
+
         $js = fopen("app/pages/$filename/$filename.js", "w");
         $css = fopen("app/pages/$filename/$filename.css", "w");
         $html = fopen("app/pages/$filename/$filename.html", "w");
         fwrite($js, $fileContents);
+        fwrite($css, $fileCssContent);
         // Update the json
         $pages = $this->getJSON();
         if ($pages->root === "" || $setAsMain){
