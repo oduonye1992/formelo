@@ -946,7 +946,7 @@ Formelo.prototype.navigation = function(){
 		 * @example openActivity(3, {adas:daa});
 		 */
 		openActivity : function(index, paramsObj){
-			this.navigateTo(index, paramsObj);
+			this.navigateToChild(index, paramsObj);
 		},
 		navigateTo : function(index, paramsObj){
 			that.currentIndex = index;
@@ -1119,6 +1119,7 @@ Formelo.prototype.require = function(key){
 	if (key && this.mModules[key]){
 		return this.mModules[key];
 	} else {
+		console.log('Requiring '+key);
 		var exports = this.mAppletConfig.exports.js;
 		console.log(exports);
 		if (exports[key]){
@@ -1242,9 +1243,6 @@ Formelo.prototype.configuration = {
 			});
 	}
 };
-
-
-
 
 
 
